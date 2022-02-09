@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <!-- NOTE custom bootstrap theme is loaded after the bootstrap link -->
+  <link rel="stylesheet" href="Lux.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body.debug .container,
+    body.debug .container-fluid {
+      outline: 2px double blue;
+      outline-offset: -2px;
+    }
+
+    body.debug .row {
+      outline: 2px dashed red;
+      outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+      outline: 2px dotted forestgreen;
+      outline-offset: -3px;
+    }
+  </style>
+  <title> ☕Mocha Mick's🍲</title>
+</head>
+
+<body class=" text-light">
+  <header class="container-fluid bg-light text-dark p-2">
+    <h2>Mocha Mick's</h2>
+  </header>
+  <main class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6 p-5">
+        <div class="row">
+          <div class="col-12">
+            Menu
+          </div>
+        </div>
+        <!-- NOTE separate row for injecting html -->
+        <div id="menu" class="row text-dark">
+          <!-- TEMPLATE FOR MENU ITEM -->
+          <div class="menu-item col-6 bg-light p-0 selectable" onclick="buyCoffee('coffee name')">
+            <img class="img-fluid "
+              src="https://s3-alpha-sig.figma.com/img/60f3/b0c0/7c8a0add6e09c3b5d1cd783734c89231?Expires=1645401600&Signature=GhwBczxJ-P2y2Tmk5slGdF2BuMMOAlksiPJxFiK06SSGvkwm-Xti~qYKj0FKm7vYNNkrt9dP84LTlfSsXX8gRUWc~u5guvvAF5VpZXi1NgTfTbG-d-wKASIaiEbEhH~YmVceDgiRAtSCp2CApZt~NZLW9o8Q3rROQfb-VTQydCS4EwdYO2sU0NCbfrXpkL6J6OUdSE6xqz0tO-~9nWxIGz8PTYmMcl9XcUJXNv5EB-d4XvezrRk-1gP6SODy3GuZlrsSSZQa1vWm8LS7oRDTNwqzU0rMrxHCPfbEsCN-J2z0uRTIh8tn7Irpuot~Zm~9hkD5nNkgA0gu92o0ynmsOQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+              alt="">
+            <div class="d-flex justify-content-between p-2">
+              <h6>Mocha</h6>
+              <p>$8.99</p>
+            </div>
+          </div>
+          <!-- --------- end of template -->
+        </div>
+      </div>
+      <div class="col-12 col-md-6 p-5">
+        <div class="row bg-white text-dark">
+          <div class="col-12">Your Order</div>
+        </div>
+        <div id="cart" class="row text-light">
+          <!-- STUB Cart item template -->
+          <div class="col-12">
+            <div class="d-flex justify-content-between p-1">
+              <h6>1 Mocha </h6>
+              <b>$9.99</b>
+            </div>
+          </div>
+          <!-- ------------ end of template -->
+        </div>
+        <div class="row bg-warning text-dark">
+          <div class="col-12">
+            <b>Total: $<span id="total">0.00</span></b>
+          </div>
+          <button id="checkout" class="btn btn-outline-dark" onclick="checkout()"> checkout</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+  <script src="app.js"></script>
+</body>
+
+</html>
